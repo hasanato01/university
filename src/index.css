@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
+@import url("colors.css");
+
+* {
+  transition-delay: 5s;
+  font-family: "Roboto Slab", serif;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon {
+  color: #000;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.border-red {
+  border-color: red;
+}
+
+.input-field {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  height: 38px;
+  width: 90%;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.form-row {
+  justify-content: start;
+  margin-bottom: 5px;
+  display: flex;
+  margin-top: 20px;
+}
+
+.form-line-title {
+  width: 30%;
+  align-items: center;
+  display: flex;
+}
+
+.form-line-input {
+  width: 70%;
+}
+
+.bg-light {
+  background-color: #ccc;
+}
+
+span,
+h3,
+h5,
+label {
+  color: #000;
+}
+
+.bg-color {
+  background-color: var(--background-color);
+}
+.text-color {
+  color: var(--text-color);
+}
+.primary-color {
+  color: var(--primary-color);
+}
+.dark-color {
+  color: var(--dark-color);
+}

@@ -1,0 +1,41 @@
+#logo-container {
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.app-title {
+  font-weight: bold;
+  margin: 0;
+  color: var(--dark-color);
+}
+.app-sub-title {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.side-bar-items {
+  list-style: none;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.side-bar-items li {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.side-bar-item {
+  margin-left: 20px;
+  margin-right: 20px;
+}
