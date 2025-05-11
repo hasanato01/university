@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import Cookies from "js-cookie";
 import DashboardPages from "./pages/DashboardPages";
 import LayoutSidebar from "./components/utils/sidebar/LayoutSidebar";
-import TopNavbar from "./components/utils/TopNavbar";
+import TopNavbar from "./components/utils/topbar/TopNavbar";
 import Login from "./components/auth/Login";
 
 function App() {
@@ -18,16 +18,16 @@ function App() {
 }
 
 function ProtectedRoutes() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  useEffect(() => {
-    const userData = Cookies.get("userData")
-      ? JSON.parse(Cookies.get("userData"))
-      : null;
-    if (!userData || !userData.role) {
-      navigate("/login", { replace: true });
-    }
-  }, [navigate]);
+  // useEffect(() => {
+  //   const userData = Cookies.get("userData")
+  //     ? JSON.parse(Cookies.get("userData"))
+  //     : null;
+  //   if (!userData || !userData.role) {
+  //     navigate("/login", { replace: true });
+  //   }
+  // }, [navigate]);
 
   return <AppContent />;
 }
@@ -39,24 +39,27 @@ function AppContent() {
 
   return (
     <div className="row">
-      <div className="col-xl-2 p-3 d-flex bg-color">
+      <div className="d-flex" style={{ width: "14%" }}>
         <LayoutSidebar />
       </div>
-      <div className="col-xl-10 col-md-12">
+      <div className="col-10" style={{ width: "86%" }}>
         <TopNavbar />
-        <div className="col-12 px-4">
+        <div className="col-12">
           <div id="content">
             <Routes>
-              {userData.role === "admin" && (
+              {/* {userData.role === "admin" && (
                 <>
                   <Route path="/" element={<DashboardPages />} />
                 </>
-              )}
-              {userData.role === "user" && (
-                <>
-                  {/* <Route path="/uservolunteers" element={<UserVolunteers />} /> */}
-                </>
-              )}
+              )} */}
+              {/* {userData.role === "user" && (
+                <> */}
+              <Route path="/myregistration" element={<DashboardPages />} />
+              <Route path="/registration" element={<DashboardPages />} />
+              <Route path="/terms" element={<DashboardPages />} />
+              <Route path="/myprofile" element={<DashboardPages />} />
+              {/* </>
+              )} */}
               <Route path="*" element={<DashboardPages />} />
             </Routes>
           </div>

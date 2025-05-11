@@ -1,0 +1,21 @@
+.quick-action-btn {
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 5px;
+  border-radius: 10px;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.quick-action-btn p {
+  color: #000;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.quick-action-btn svg {
+  width: 24px;
+  height: 24px;
+}

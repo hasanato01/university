@@ -1,6 +1,8 @@
 :root {
   --background-color: #f7f7f7;
   --primary-color: #19a081;
+  --primary-color-semi-transparent: rgba(25, 160, 129, 0.2);
+  --primary-color-dark: #006951;
   --text-color: #585858;
   --dark-color: #202226;
 }

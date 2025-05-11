@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import logo from "../../../img/logo.png";
 import "./LayoutSidebar.css";
 import {
@@ -8,97 +8,66 @@ import {
   Mortarboard,
   PersonCircle,
 } from "react-bootstrap-icons";
+import { useNavigate } from "react-router-dom";
 
 const LayoutSidebar = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("home");
-  const handleTabClick = useCallback((tab) => {
+
+  const handleTabClick = (tab) => {
     setActiveTab(tab);
-  }, []);
+    navigate(`/${tab}`);
+  };
 
   return (
-    <div>
-      <div id="logo-container">
-        <img src={logo} alt="logo" className="logo" />
-        <div>
-          <h4 className="app-title">University</h4>
-          <p className="app-sub-title">Registration</p>
+    <div className="sidebar d-flex flex-column">
+      <div>
+        <div className="logo mb-4">
+          <img src={logo} alt="Logo UNLaM" />
+          <div>
+            <div className="logo-text">University</div>
+            <div className="logo-subtext">Registration</div>
+          </div>
         </div>
+
+        <nav className="nav flex-column">
+          <span
+            className={`nav-link ${activeTab === "home" ? "active" : ""}`}
+            onClick={() => handleTabClick("home")}>
+            <HouseDoor /> Home
+          </span>
+          <span
+            className={`nav-link ${
+              activeTab === "myregistration" ? "active" : ""
+            }`}
+            onClick={() => handleTabClick("myregistration")}>
+            <Mortarboard /> My registration
+          </span>
+          <span
+            className={`nav-link ${
+              activeTab === "registration" ? "active" : ""
+            }`}
+            onClick={() => handleTabClick("registration")}>
+            <Clipboard2Check /> Registration
+          </span>
+          <span
+            className={`nav-link ${activeTab === "terms" ? "active" : ""}`}
+            onClick={() => handleTabClick("terms")}>
+            <FileEarmarkText /> Terms
+          </span>
+          <span
+            className={`nav-link ${activeTab === "myprofile" ? "active" : ""}`}
+            onClick={() => handleTabClick("myprofile")}>
+            <PersonCircle /> My profile
+          </span>
+        </nav>
       </div>
 
-      <ul className="side-bar-items">
-        <li onClick={() => handleTabClick("home")}>
-          <HouseDoor
-            className={activeTab === "home" ? `primary-color` : `text-color`}
-            size={24}
-          />
-          <span
-            className={`side-bar-item ${
-              activeTab === "home" ? `dark-color` : `text-color`
-            }`}>
-            Home
-          </span>
-        </li>
-
-        <li onClick={() => handleTabClick("myregistration")}>
-          <Mortarboard
-            className={
-              activeTab === "myregistration" ? `primary-color` : `text-color`
-            }
-            size={24}
-          />
-          <span
-            className={`side-bar-item ${
-              activeTab === "myregistration" ? `dark-color` : `text-color`
-            }`}>
-            My Registration
-          </span>
-        </li>
-
-        <li onClick={() => handleTabClick("register")}>
-          <Clipboard2Check
-            className={
-              activeTab === "register" ? `primary-color` : `text-color`
-            }
-            size={24}
-          />
-          <span
-            className={`side-bar-item ${
-              activeTab === "register" ? `dark-color` : `text-color`
-            }`}>
-            Register
-          </span>
-        </li>
-
-        <li onClick={() => handleTabClick("prcedures")}>
-          <FileEarmarkText
-            className={
-              activeTab === "prcedures" ? `primary-color` : `text-color`
-            }
-            size={24}
-          />
-          <span
-            className={`side-bar-item ${
-              activeTab === "prcedures" ? `dark-color` : `text-color`
-            }`}>
-            Procedures
-          </span>
-        </li>
-
-        <li onClick={() => handleTabClick("myprofile")}>
-          <PersonCircle
-            className={
-              activeTab === "myprofile" ? `primary-color` : `text-color`
-            }
-            size={24}
-          />
-          <span
-            className={`side-bar-item ${
-              activeTab === "myprofile" ? `dark-color` : `text-color`
-            }`}>
-            My Profile
-          </span>
-        </li>
-      </ul>
+      <div className="logout">
+        <span className="nav-link" onClick={() => setActiveTab("")}>
+          <i className="bi bi-box-arrow-right"></i> Sign out
+        </span>
+      </div>
     </div>
   );
 };

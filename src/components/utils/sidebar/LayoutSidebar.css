@@ -1,41 +1,51 @@
-#logo-container {
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  border-right: 1px solid #ddd;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
 }
-
-.logo {
-  width: 64px;
-  height: 64px;
-  margin-left: 20px;
-  margin-right: 20px;
+.sidebar .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
-
-.app-title {
+.sidebar .logo img {
+  width: 40px;
+  height: 40px;
+}
+.sidebar .logo-text {
   font-weight: bold;
-  margin: 0;
-  color: var(--dark-color);
 }
-.app-sub-title {
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
-  color: var(--text-color);
+.sidebar .logo-subtext {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: -0.5rem;
 }
-
-.side-bar-items {
-  list-style: none;
-  margin-top: 30px;
-  margin-bottom: 30px;
+.nav-link {
+  cursor: pointer;
+  color: #333;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
 }
-
-.side-bar-items li {
-  margin-top: 20px;
-  margin-bottom: 20px;
+.nav-link:hover,
+.nav-link.active {
+  background-color: #e6f4f1;
+  color: #007965;
 }
-
-.side-bar-item {
-  margin-left: 20px;
-  margin-right: 20px;
+.nav-link i {
+  font-size: 1.2rem;
+}
+.logout {
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+}
+.logout .nav-link {
+  color: #999;
 }

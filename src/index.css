@@ -2,7 +2,6 @@
 @import url("colors.css");
 
 * {
-  transition-delay: 5s;
   font-family: "Roboto Slab", serif;
 }
 
@@ -14,6 +13,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
 }
 .icon {
   color: #000;
